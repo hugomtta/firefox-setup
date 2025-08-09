@@ -2,6 +2,12 @@
 
 set -eo pipefail
 
+# Check if Firefox is already installed
+if command -v firefox &>/dev/null; then
+  echo 'Firefox is already installed.'
+  exit 0
+fi
+
 # Check OS compatibility
 OS="$(uname -s)"
 ARCH="$(uname -m)"
