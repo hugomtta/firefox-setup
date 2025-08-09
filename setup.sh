@@ -23,3 +23,7 @@ trap 'rm -rf "${TEMP_DIR}"' EXIT
 
 # Set Firefox language
 FIREFOX_LANG='en-US'
+
+# Remove and recreate Firefox directory
+FIREFOX_DIR='/opt/firefox'
+sudo rm -rf "${FIREFOX_DIR}" && sudo mkdir -p "${FIREFOX_DIR}"
