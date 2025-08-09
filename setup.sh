@@ -16,3 +16,7 @@ if [[ "${OS}" != 'Linux' || "${ARCH}" != 'x86_64' ]]; then
   echo 'This script is intended for Linux 64-bit systems only.'
   exit 1
 fi
+
+# Create temporary directory
+TEMP_DIR="$(mktemp -d)"
+trap 'rm -rf "${TEMP_DIR}"' EXIT
