@@ -27,3 +27,7 @@ FIREFOX_LANG='en-US'
 # Remove and recreate Firefox directory
 FIREFOX_DIR='/opt/firefox'
 sudo rm -rf "${FIREFOX_DIR}" && sudo mkdir -p "${FIREFOX_DIR}"
+
+# Download and install Firefox
+URL="https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=${FIREFOX_LANG}"
+curl -L "${URL}" | sudo tar -xJC "${FIREFOX_DIR}" --strip-components=1
