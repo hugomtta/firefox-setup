@@ -31,3 +31,6 @@ sudo rm -rf "${FIREFOX_DIR}" && sudo mkdir -p "${FIREFOX_DIR}"
 # Download and install Firefox
 URL="https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=${FIREFOX_LANG}"
 curl -L "${URL}" | sudo tar -xJC "${FIREFOX_DIR}" --strip-components=1
+
+# Create symbolic link to Firefox binary
+sudo ln -sf "${FIREFOX_DIR}/firefox" /usr/local/bin/firefox
